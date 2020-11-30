@@ -990,6 +990,9 @@ class Character : public Creature, public visitable<Character>
         bool is_limb_broken( const bodypart_id &limb ) const;
         /** source of truth of whether a Character can run */
         bool can_run() const;
+    
+        bool is_bp_armored( const bodypart_id &bp ) const;
+    
         /** Hurts all body parts for dam, no armor reduction */
         void hurtall( int dam, Creature *source, bool disturb = true );
         /** Harms all body parts for dam, with armor reduction. If vary > 0 damage to parts are random within vary % (1-100) */
@@ -2075,8 +2078,12 @@ class Character : public Creature, public visitable<Character>
         int get_armor_bash_base( bodypart_id bp ) const override;
         /** Returns cutting resistance from the creature and armor only */
         int get_armor_cut_base( bodypart_id bp ) const override;
-        /** Returns cutting resistance from the creature and armor only */
+        /** Returns bullet resistance from the creature and armor only */
         int get_armor_bullet_base( bodypart_id bp ) const override;
+        /** Returns fire resistance from the creature and armor only */
+        int get_armor_fire_base( bodypart_id bp ) const;
+        /** Returns acid resistance from the creature and armor only */
+        int get_armor_acid_base( bodypart_id bp ) const;
         /** Returns overall env_resist on a body_part */
         int get_env_resist( bodypart_id bp ) const override;
         /** Returns overall acid resistance for the body part */
