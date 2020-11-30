@@ -43,9 +43,12 @@
     "name": { "str": "Alloy Plating - Arms" },
     "description": "The flesh on your arms has been surgically replaced by alloy plating.  Provides passive protection and can be used in conjunction with bionic martial arts.",
     "occupied_bodyparts": [ [ "arm_l", 4 ], [ "arm_r", 4 ] ],
-    "bash_protec": [ [ "arm_l", 3 ], [ "arm_r", 3 ] ],
-    "cut_protec": [ [ "arm_l", 3 ], [ "arm_r", 3 ] ],
-    "bullet_protec": [ [ "arm_l", 3 ], [ "arm_r", 3 ] ],
+    "bash_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
+    "cut_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
+    "bullet_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
+	"fire_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
+	"acid_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
+    "encumbrance": [ [ "arm_l", 5], [ "arm_r", 5 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -66,9 +69,12 @@
     "name": { "str": "Alloy Plating - head" },
     "description": "The flesh on your head has been surgically replaced by alloy plating, protecting both your head and jaw regions.",
     "occupied_bodyparts": [ [ "head", 5 ], [ "mouth", 1 ] ],
-    "bash_protec": [ [ "head", 3 ] ],
-    "cut_protec": [ [ "head", 3 ] ],
-    "bullet_protec": [ [ "head", 3 ] ],
+    "bash_protec": [ [ "head", 5 ] ],
+    "cut_protec": [ [ "head", 5 ] ],
+    "bullet_protec": [ [ "head", 5 ] ],
+	"fire_protec": [ [ "head", 5 ] ],
+	"acid_protec": [ [ "head", 5 ] ],
+    "encumbrance": [ [ "head", 5 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -77,9 +83,12 @@
     "name": { "str": "Alloy Plating - Legs" },
     "description": "The flesh on your legs has been surgically replaced by alloy plating.  Provides passive protection and can be used in conjunction with bionic martial arts.",
     "occupied_bodyparts": [ [ "leg_l", 6 ], [ "leg_r", 6 ] ],
-    "bash_protec": [ [ "leg_l", 3 ], [ "leg_r", 3 ] ],
-    "cut_protec": [ [ "leg_l", 3 ], [ "leg_r", 3 ] ],
-    "bullet_protec": [ [ "leg_l", 3 ], [ "leg_r", 3 ] ],
+    "bash_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+    "cut_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+    "bullet_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+	"fire_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+	"acid_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+    "encumbrance": [ [ "leg_l", 5], [ "leg_r", 5 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
@@ -88,9 +97,12 @@
     "name": { "str": "Alloy Plating - torso" },
     "description": "The flesh on your torso has been surgically replaced by alloy plating, protecting it from physical trauma.",
     "occupied_bodyparts": [ [ "torso", 10 ] ],
-    "bash_protec": [ [ "torso", 3 ] ],
-    "cut_protec": [ [ "torso", 3 ] ],
-    "bullet_protec": [ [ "torso", 3 ] ],
+    "bash_protec": [ [ "torso", 5 ] ],
+    "cut_protec": [ [ "torso", 5 ] ],
+    "bullet_protec": [ [ "torso", 5 ] ],
+	"fire_protec": [ [ "torso", 5 ] ],
+	"acid_protec": [ [ "torso", 5 ] ],
+    "encumbrance": [ [ "torso", 5 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
   {
