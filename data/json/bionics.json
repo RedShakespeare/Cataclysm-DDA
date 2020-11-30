@@ -46,8 +46,8 @@
     "bash_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
     "cut_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
     "bullet_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
-	"fire_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
-	"acid_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
+    "fire_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
+    "acid_protec": [ [ "arm_l", 5 ], [ "arm_r", 5 ] ],
     "encumbrance": [ [ "arm_l", 5], [ "arm_r", 5 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
@@ -72,8 +72,8 @@
     "bash_protec": [ [ "head", 5 ] ],
     "cut_protec": [ [ "head", 5 ] ],
     "bullet_protec": [ [ "head", 5 ] ],
-	"fire_protec": [ [ "head", 5 ] ],
-	"acid_protec": [ [ "head", 5 ] ],
+    "fire_protec": [ [ "head", 5 ] ],
+    "acid_protec": [ [ "head", 5 ] ],
     "encumbrance": [ [ "head", 5 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
@@ -86,8 +86,8 @@
     "bash_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
     "cut_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
     "bullet_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
-	"fire_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
-	"acid_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+    "fire_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+    "acid_protec": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
     "encumbrance": [ [ "leg_l", 5], [ "leg_r", 5 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },
@@ -100,8 +100,8 @@
     "bash_protec": [ [ "torso", 5 ] ],
     "cut_protec": [ [ "torso", 5 ] ],
     "bullet_protec": [ [ "torso", 5 ] ],
-	"fire_protec": [ [ "torso", 5 ] ],
-	"acid_protec": [ [ "torso", 5 ] ],
+    "fire_protec": [ [ "torso", 5 ] ],
+    "acid_protec": [ [ "torso", 5 ] ],
     "encumbrance": [ [ "torso", 5 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ]
   },

@@ -209,6 +209,10 @@ static const mtype_id mon_zombie_jackson( "mon_zombie_jackson" );
 static const mtype_id mon_zombie_skeltal_minion( "mon_zombie_skeltal_minion" );
 
 static const bionic_id bio_uncanny_dodge( "bio_uncanny_dodge" );
+static const bionic_id bio_armor_arms( "bio_armor_arms" );
+static const bionic_id bio_armor_legs( "bio_armor_legs" );
+static const bionic_id bio_armor_head( "bio_armor_head" );
+static const bionic_id bio_armor_torso( "bio_armor_torso" );
 
 // shared utility functions
 static bool within_visual_range( monster *z, int max_range )
@@ -4155,7 +4159,7 @@ bool mattack::stretch_bite( monster *z )
                                        z->name(),
                                        body_part_name_accusative( hit ) );
 
-        if( one_in( 16 - dam ) ) {
+        if( one_in( 16 - dam ) && ( target->is_bp_armored( hit ) ? !one_in( 4 ) : true ) {
             if( target->has_effect( effect_bite, hit.id() ) ) {
                 target->add_effect( effect_bite, 40_minutes, hit, true );
             } else if( target->has_effect( effect_infected, hit.id() ) ) {

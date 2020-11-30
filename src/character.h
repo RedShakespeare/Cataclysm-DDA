@@ -991,6 +991,7 @@ class Character : public Creature, public visitable<Character>
         /** source of truth of whether a Character can run */
         bool can_run() const;
         /** Hurts all body parts for dam, no armor reduction */
+        bool is_bp_armored( const bodypart_id &bp, const bionic_id &bio ) const;
         void hurtall( int dam, Creature *source, bool disturb = true );
         /** Harms all body parts for dam, with armor reduction. If vary > 0 damage to parts are random within vary % (1-100) */
         int hitall( int dam, int vary, Creature *source );
