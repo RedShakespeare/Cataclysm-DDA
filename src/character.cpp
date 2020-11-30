@@ -1496,7 +1496,7 @@ bool Character::is_bp_armored( const bodypart_id &bp ) const
     return ( bp == bp_torso && has_bionic( bio_armor_torso ) ) || \
            ( bp == bp_head && has_bionic( bio_armor_head ) ) || \
            ( ( bp == bp_arm_l || bp == bp_arm_r ) && has_bionic( bio_armor_arms ) ) || \
-           ( ( bp == bp_leg_l || bp == bp_leg_r ) && has_bionic( bio_armor_arms ) );
+           ( ( bp == bp_leg_l || bp == bp_leg_r ) && has_bionic( bio_armor_legs ) );
 }
 
 void Character::try_remove_downed()
