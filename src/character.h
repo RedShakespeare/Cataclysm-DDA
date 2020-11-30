@@ -2079,9 +2079,9 @@ class Character : public Creature, public visitable<Character>
         /** Returns bullet resistance from the creature and armor only */
         int get_armor_bullet_base( bodypart_id bp ) const override;
         /** Returns fire resistance from the creature and armor only */
-        int get_armor_fire_base( bodypart_id bp ) const override;
+        int get_armor_fire_base( bodypart_id bp ) const;
         /** Returns acid resistance from the creature and armor only */
-        int get_armor_acid_base( bodypart_id bp ) const override;
+        int get_armor_acid_base( bodypart_id bp ) const;
         /** Returns overall env_resist on a body_part */
         int get_env_resist( bodypart_id bp ) const override;
         /** Returns overall acid resistance for the body part */
