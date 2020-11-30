@@ -120,6 +120,11 @@ static const bionic_id bio_eye_optic( "bio_eye_optic" );
 static const bionic_id bio_soporific( "bio_soporific" );
 static const bionic_id bio_uncanny_dodge( "bio_uncanny_dodge" );
 static const bionic_id bio_watch( "bio_watch" );
+static const bionic_id bio_armor_arms( "bio_armor_arms" );
+static const bionic_id bio_armor_legs( "bio_armor_legs" );
+static const bionic_id bio_armor_head( "bio_armor_head" );
+static const bionic_id bio_armor_torso( "bio_armor_torso" );
+
 
 static const efftype_id effect_adrenaline( "adrenaline" );
 static const efftype_id effect_alarm_clock( "alarm_clock" );
@@ -1493,10 +1498,10 @@ bool Character::can_run() const
 
 bool Character::is_bp_armored( const bodypart_id &bp ) const
 {
-    return ( bp == bp_torso && has_bionic( bio_armor_torso ) ) || \
-           ( bp == bp_head && has_bionic( bio_armor_head ) ) || \
-           ( ( bp == bp_arm_l || bp == bp_arm_r ) && has_bionic( bio_armor_arms ) ) || \
-           ( ( bp == bp_leg_l || bp == bp_leg_r ) && has_bionic( bio_armor_arms ) );
+        return ( bp->token == bp_torso && has_bionic( bio_armor_torso ) ) || \
+           ( bp->token == bp_head && has_bionic( bio_armor_head ) ) || \
+           ( ( bp->token == bp_arm_l || bp->token == bp_arm_r ) && has_bionic( bio_armor_arms ) ) || \
+           ( ( bp->token == bp_leg_l || bp->token == bp_leg_r ) && has_bionic( bio_armor_legs ) );
 }
 
 void Character::try_remove_downed()
@@ -8333,7 +8338,7 @@ int Character::get_armor_fire_base( bodypart_id bp ) const
         }
     }
 
-    ret += mutation_armor( bp, damage_type::heat );
+    ret += mutation_armor( bp, damage_type::HEAT );
     return ret;
 }
 
@@ -8353,7 +8358,7 @@ int Character::get_armor_acid_base( bodypart_id bp ) const
         }
     }
 
-    ret += mutation_armor( bp, damage_type::acid );
+    ret += mutation_armor( bp, damage_type::ACID );
     return ret;
 }
 
