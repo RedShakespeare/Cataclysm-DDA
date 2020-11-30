@@ -334,6 +334,20 @@ void bionic_data::load( const JsonObject &jsobj, const std::string & )
             env_protec.emplace( bodypart_str_id( ja.get_string( 0 ) ), ja.get_int( 1 ) );
         }
     }
+	if( jsobj.has_array( "fire_protec" ) ) {
+        // clear data first so that copy-from can override it
+        fire_protec.clear();
+        for( JsonArray ja : jsobj.get_array( "fire_protec" ) ) {
+            fire_protec.emplace( bodypart_str_id( ja.get_string( 0 ) ), ja.get_int( 1 ) );
+        }
+    }
+	if( jsobj.has_array( "acid_protec" ) ) {
+        // clear data first so that copy-from can override it
+        acid_protec.clear();
+        for( JsonArray ja : jsobj.get_array( "acid_protec" ) ) {
+            acid_protec.emplace( bodypart_str_id( ja.get_string( 0 ) ), ja.get_int( 1 ) );
+        }
+    }
     if( jsobj.has_array( "bash_protec" ) ) {
         // clear data first so that copy-from can override it
         bash_protec.clear();

@@ -8203,7 +8203,9 @@ int Character::get_armor_type( damage_type dt, bodypart_id bp ) const
         case damage_type::BULLET:
             return get_armor_bullet( bp );
         case damage_type::ACID:
+			return get_armor_acid_base( bp );
         case damage_type::HEAT:
+			return get_armor_fire_base( bp );
         case damage_type::COLD:
         case damage_type::ELECTRIC: {
             int ret = 0;
@@ -8304,6 +8306,46 @@ int Character::get_env_resist( bodypart_id bp ) const
     if( bp == body_part_eyes && has_trait( trait_SEESLEEP ) ) {
         ret += 8;
     }
+    return ret;
+}
+
+int Character::get_armor_fire_base( bodypart_id bp ) const
+{
+    int ret = 0;
+    for( const item &i : worn ) {
+        if( i.covers( bp ) ) {
+            ret += i.fire_resist();
+        }
+    }
+
+    for( const bionic_id &bid : get_bionics() ) {
+        const auto fire_prot = bid->fire_protec.find( bp.id() );
+        if( fire_prot != bid->fire_protec.end() ) {
+            ret += fire_prot->second;
+        }
+    }
+
+    ret += mutation_armor( bp, damage_type::heat );
+    return ret;
+}
+
+int Character::get_armor_acid_base( bodypart_id bp ) const
+{
+    int ret = 0;
+    for( const item &i : worn ) {
+        if( i.covers( bp ) ) {
+            ret += i.acid_resist();
+        }
+    }
+
+    for( const bionic_id &bid : get_bionics() ) {
+        const auto acid_prot = bid->acid_protec.find( bp.id() );
+        if( acid_prot != bid->acid_protec.end() ) {
+            ret += acid_prot->second;
+        }
+    }
+
+    ret += mutation_armor( bp, damage_type::acid );
     return ret;
 }
 
