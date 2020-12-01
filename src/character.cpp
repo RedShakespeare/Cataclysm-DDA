@@ -8323,7 +8323,7 @@ int Character::get_env_resist( bodypart_id bp ) const
     return ret;
 }
 
-int Character::get_armor_fire_base( bodypart_id bp ) const
+int Character::get_armor_fire_base( const bodypart_id &bp ) const
 {
     int ret = 0;
     for( const item &i : worn ) {
@@ -8343,7 +8343,7 @@ int Character::get_armor_fire_base( bodypart_id bp ) const
     return ret;
 }
 
-int Character::get_armor_acid_base( bodypart_id bp ) const
+int Character::get_armor_acid_base( const bodypart_id &bp ) const
 {
     int ret = 0;
     for( const item &i : worn ) {
