@@ -363,7 +363,7 @@ void bite_actor::on_damage( monster &z, Creature &target, dealt_damage_instance 
     const bodypart_id &hit = dealt.bp_hit;
     if( target.has_effect( effect_grabbed ) && one_in( no_infection_chance - dealt.total_damage() ) &&
         ( ( target.is_avatar() || target.is_npc() ) &&
-          target.as_character()->is_bp_armored( hit ) ? !one_in( 4 ) : true ) ) {
+          x_in_y( target.as_character()->bp_bite_chance( hit ), 1.0f ) ) ) {
         if( target.has_effect( effect_bite, hit.id() ) ) {
             target.add_effect( effect_bite, 40_minutes, hit, true );
         } else if( target.has_effect( effect_infected, hit.id() ) ) {

@@ -991,7 +991,13 @@ class Character : public Creature, public visitable<Character>
         /** source of truth of whether a Character can run */
         bool can_run() const;
 
+        /** Return true if bionics hamper compression on bodypart to stop bleeding */
         bool is_bp_armored( const bodypart_id &bp ) const;
+
+        /** Return bodypart's bite chance modifier */
+        double bp_bite_chance( const bodypart_id &bp ) const;
+        /** Return bodypart's bleed chance modifier */
+        double bp_bleed_chance( const bodypart_id &bp ) const;
 
         /** Hurts all body parts for dam, no armor reduction */
         void hurtall( int dam, Creature *source, bool disturb = true );

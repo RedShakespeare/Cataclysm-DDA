@@ -391,6 +391,7 @@ static const trait_id trait_WEB_WALKER( "WEB_WALKER" );
 static const trait_id trait_WEB_WEAVER( "WEB_WEAVER" );
 
 static const std::string flag_PLOWABLE( "PLOWABLE" );
+static const std::string flag_BIO_CANT_COMPRESS( "BIONIC_CANT_COMPRESS" );
 
 static const mtype_id mon_player_blob( "mon_player_blob" );
 
@@ -1495,11 +1496,35 @@ bool Character::is_bp_armored( const bodypart_id &bp ) const
 {
     for( const bionic_id &bid : get_bionics() ) {
         if( find( bid->covered_bodyparts.begin(), bid->covered_bodyparts.end(),
-                  bp.id() ) != bid->covered_bodyparts.end() ) {
+                  bp.id() ) != bid->covered_bodyparts.end() && bid->has_flag( flag_BIO_CANT_COMPRESS ) ) {
             return true;
         }
     }
     return false;
+}
+
+double Character::bp_bite_chance( const bodypart_id &bp ) const
+{
+    double modifier = 1.0f;
+    for( const bionic_id &bid : get_bionics() ) {
+        if( find( bid->covered_bodyparts.begin(), bid->covered_bodyparts.end(),
+                  bp.id() ) != bid->covered_bodyparts.end() ) {
+            modifier *= ( 1.0f - bid->no_bite_chance );
+        }
+    }
+    return modifier;
+}
+
+double Character::bp_bleed_chance( const bodypart_id &bp ) const
+{
+    double modifier = 1.0f;
+    for( const bionic_id &bid : get_bionics() ) {
+        if( find( bid->covered_bodyparts.begin(), bid->covered_bodyparts.end(),
+                  bp.id() ) != bid->covered_bodyparts.end() ) {
+            modifier *= ( 1.0f - bid->no_bleed_chance );
+        }
+    }
+    return modifier;
 }
 
 void Character::try_remove_downed()

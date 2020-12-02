@@ -951,7 +951,7 @@ void Creature::deal_damage_handle_type( const effect_source &source, const damag
         case damage_type::STAB:
         case damage_type::BULLET:
             // these are bleed inducing damage types
-            if( ( is_avatar() || is_npc() ) && ( as_character()->is_bp_armored( bp ) ? !one_in( 3 ) : true ) ) {
+            if( ( is_avatar() || is_npc() ) && x_in_y( as_character()->bp_bleed_chance( bp ), 1.0f ) ) {
                 as_character()->make_bleed( source, bp, 1_minutes * rng( 1, adjusted_damage ) );
             } else {
                 add_effect( source, effect_bleed, 1_minutes * rng( 1, adjusted_damage ), bp );
