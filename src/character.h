@@ -1115,7 +1115,7 @@ class Character : public Creature, public visitable<Character>
          * is added to existing work items. */
         void item_encumb( std::map<bodypart_id, encumbrance_data> &vals, const item &new_item ) const;
 
-        std::array<std::array<int, NUM_WATER_TOLERANCE>, num_bp> mut_drench;
+        std::array<std::array<int, NUM_WATER_TOLERANCE>, num_bp> mod_drench;
 
     public:
         /** Recalculate encumbrance for all body parts. */
@@ -1182,7 +1182,7 @@ class Character : public Creature, public visitable<Character>
         /** Returns the highest mutation category */
         mutation_category_id get_highest_category() const;
         /** Recalculates mutation drench protection for all bodyparts (ignored/good/neutral stats) */
-        void drench_mut_calc();
+        void drench_mod_calc();
         /** Recursively traverses the mutation's prerequisites and replacements, building up a map */
         void build_mut_dependency_map( const trait_id &mut,
                                        std::unordered_map<trait_id, int> &dependency_map, int distance );

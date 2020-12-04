@@ -9173,7 +9173,7 @@ void Character::set_highest_cat_level()
     }
 }
 
-void Character::drench_mut_calc()
+void Character::drench_mod_calc()
 {
     for( const bodypart_id &bp : get_all_body_parts() ) {
         int ignored = 0;
@@ -9189,10 +9189,19 @@ void Character::drench_mut_calc()
                 good += wp_iter->second.z;
             }
         }
+		
+		for( const bionic_id &iter : get_bionics() ) {
+            const auto wp_iter = iter->protection.find( bp.id() );
+            if( wp_iter != iter->protection.end() ) {
+                ignored += wp_iter->second.x;
+                neutral += wp_iter->second.y;
+                good += wp_iter->second.z;
+            }
+        }
 
-        mut_drench[bp->token][WT_GOOD] = good;
-        mut_drench[bp->token][WT_NEUTRAL] = neutral;
-        mut_drench[bp->token][WT_IGNORED] = ignored;
+        mod_drench[bp->token][WT_GOOD] = good;
+        mod_drench[bp->token][WT_NEUTRAL] = neutral;
+        mod_drench[bp->token][WT_IGNORED] = ignored;
     }
 }
 
